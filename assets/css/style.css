@@ -1,0 +1,35 @@
+@layer utilities {
+    .rotate-y {
+      @apply transform;
+      transform: rotate(-90deg) rotateY(180deg) ;
+    }
+  }
+
+.active {
+    opacity: 1;
+}
+.option-img {
+    opacity: 0.5;
+}
+
+.cpu_result {
+    transform-origin: right;
+    animation: cpuShake 0.7s ease infinite;
+  }
+
+@keyframes cpuShake {
+    50% {
+      transform: rotate(-10deg);
+    }
+  }
+
+.user_result {
+  transform-origin: left;
+  animation: userShake 0.7s ease infinite;
+}
+
+  @keyframes userShake {
+    50% {
+      transform: rotate(10deg);
+    }
+  }

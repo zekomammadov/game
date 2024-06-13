@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                transform: {
+                    'rotate-y': 'rotate(-90deg) rotateY(180deg)',
+                },
+                rotate: {
+                    '90': '90deg',
+                },
+            }
+          }
+        }
+      </script>
+</head>
+<body class="">
+        <div class="bg-[#f6f7fb] h-screen flex flex-col items-center justify-center">
+            <div id="restartDiv" class="hidden flex flex-col items-center justify-center">
+                <h1 class="text-[120px] text-red-600 text-center">Game Over</h1>
+                <p class="text-[40px] mb-[20px]">Score: <span id="lastScore"></span></p>
+                <button onclick="restart()" class=" h-[60px] px-[20px] bg-green-600 rounded-[10px] text-white text-[30px]">Restart</button>
+            </div>
+            <div id="gameContent">
+                <section class="w-[568px]  text-[50px] flex justify-between items-center mb-[30px]">
+                    <div class="">
+                        <p class="font-semibold text-[#32cd32]">
+                            Score: <span id="score" >0</span>
+                        </p>
+                    </div>
+                    <div class="">
+                        <p class="font-semibold text-red-600">
+                            Health: <span id="health">5</span>
+                        </p>
+                    </div>
+                </section>
+                <section class=" px-[112px] py-[32px] bg-white rounded-[14px] shadow-gray-300 shadow-lg">
+                    <div class="result-field flex flex-col items-center">
+                        <div class="result-img flex items-center justify-between w-full">
+                            <figure class="size-[110px] rotate-90 " id="user-img"><img class="size-full object-contain" src="assets/img/rock.png" alt=""></figure>
+                            <figure class="size-[110px] rotate-y" id="enemy-img"><img class="size-full object-contain" src="assets/img/rock.png" alt=""></figure>
+                        </div>
+                        <div id="result-text" class="mt-[24px] text-[32px] text-[#7d2ae8] font-semibold">Let's Play!!</div>
+                    </div>
+                    <div class="option flex justify-between mt-[40px] gap-[80px]">
+                        <button  id="rock" class="option-img flex flex-col items-center justify-between hover:opacity-100 ">
+                            <img class="w-[60px]" src="assets/img/rock.png" alt="">
+                            <p class="mt-[16px] text-[#7d2ae8] text-[18px] font-semibold">Rock</p>
+                        </button>
+                        <button  id="scissors" class="option-img flex flex-col items-center justify-between hover:opacity-100">
+                            <img class="w-[60px]" src="assets/img/scissors.png" alt="">
+                            <p class="mt-[16px] text-[#7d2ae8] text-[18px] font-semibold">Scissors</p>
+                        </button>
+                        <button  id="paper" class="option-img flex flex-col items-center justify-between hover:opacity-100 ">
+                            <img class="w-[60px]" src="assets/img/paper.png" alt="">
+                            <p class="mt-[16px] text-[#7d2ae8] text-[18px] font-semibold">Paper</p>
+                        </button>
+                    </div>
+                </section>
+            </div>
+            
+        </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
